@@ -5,7 +5,9 @@ Raider allows you to easily download Instagram images, videos and stories.
 
 ![Demo GIF](showcase/demo.gif)
 
-## Installation
+## Downloads
+
+![GitHub All Releases](https://img.shields.io/github/downloads/assetkid/raider-release/total?style=for-the-badge)
 
 * ### [Windows](https://github.com/AssetKid/raider-release/releases/latest)
 * ### MacOS - Not Available
