@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.5.0 (11/11/2019)
+![GitHub Releases](https://img.shields.io/github/downloads/AssetKid/raider-release/v1.5.0/total?style=for-the-badge)
+
+### New Features
+* You can now set a sleep timer between account requests during mass update.
+
+### Changes
+* Reduced the `Mass Update Max Post` minimum to `10`.
+
+### Bug Fixes
+* Updated API query hashes.
+---
+
 ## v1.4.0 (15/10/2019)
 ![GitHub Releases](https://img.shields.io/github/downloads/AssetKid/raider-release/v1.4.0/total?style=for-the-badge)
 
