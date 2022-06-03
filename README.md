@@ -1,3 +1,6 @@
+The code is now publicly available. See https://github.com/AssetKid/raider/issues/110 for more info.
+
+---
 # <img src="icons/icon.ico" height="30px" /> Raider for Instagram
 > An Instagram download application for Windows, Mac & Linux
 
