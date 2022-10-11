@@ -238,6 +238,7 @@ import path from 'path'
 import axios from 'axios'
 import logger from 'electron-log'
 import axiosRetry from 'axios-retry'
+import needle from 'needle'
 
 import { rules } from '@/mixins/rules'
 import { openMainSite, addLogEntry } from '@/mixins/shared'
@@ -442,12 +443,18 @@ export default {
       this.currentDownloadIndex = 0
     },
     getProfile () {
-      const url = `https://www.instagram.com/${this.inputValue.trim()}/?__a=1`
+      const url = `https://www.instagram.com/${this.inputValue.trim()}/?__a=1&__d=dis`
 
-      axios.get(url)
+      needle('get', url)
+        .then((response) => { return response.body })
         .then((response) => {
-          this.requestedUser = Object.keys(response.data).length > 0 ? response.data.graphql.user : null
-
+          this.requestedUser = null
+          if (Object.keys(response).length > 0 && response.graphql !== undefined) {
+            this.requestedUser = response.graphql.user
+          } else {
+            this.showErrorDialog('graphql data not found', { cancel: true, footer: `Data: ${JSON.stringify(response)}` })
+            return
+          }
           if (this.requestedUser == null) {
             this.changeSession()
               .then(() => {
